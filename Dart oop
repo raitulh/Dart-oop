@@ -1,0 +1,177 @@
+// Class & Object
+
+class Person {
+  String name = "Rahim";
+  int age = 25;
+
+  void display() {
+    print("Name: $name, Age: $age");
+  }
+}
+
+void main() {
+  Person p1 = Person(); 
+  p1.display();
+}
+
+
+// Constructor
+
+class Person {
+  String name;
+  int age;
+
+  Person(this.name, this.age); 
+
+  void display() {
+    print("Name: $name, Age: $age");
+  }
+}
+
+void main() {
+  Person p1 = Person("Karim", 30);
+  p1.display();
+}
+
+
+// Inheritance
+
+class Animal {
+  void sound() {
+    print("Animal makes sound");
+  }
+}
+
+class Dog extends Animal {
+  void bark() {
+    print("Dog barks");
+  }
+}
+
+void main() {
+  Dog d = Dog();
+  d.sound(); 
+  d.bark();  
+}
+
+
+
+// Method Overriding (Polymorphism).
+
+class Animal {
+  void sound() {
+    print("Animal makes sound");
+  }
+}
+
+class Dog extends Animal {
+  @override
+  void sound() {
+    print("Dog barks");
+  }
+}
+
+void main() {
+  Animal a = Dog(); 
+  a.sound();
+}
+
+
+// Encapsulation (Getter & Setter).
+
+class BankAccount {
+  double _balance = 0; 
+
+  double get balance => _balance; 
+
+  set deposit(double amount) {
+    if (amount > 0) {
+      _balance += amount;
+    }
+  }
+}
+
+void main() {
+  BankAccount account = BankAccount();
+  account.deposit = 1000; 
+  print(account.balance); 
+}
+
+// Abstract Class.
+
+abstract class Shape {
+  void draw(); 
+}
+
+class Circle extends Shape {
+  @override
+  void draw() {
+    print("Drawing Circle");
+  }
+}
+
+void main() {
+  Shape s = Circle();
+  s.draw();
+}
+
+
+// Interface (Dart uses abstract class for interface).
+
+abstract class Printable {
+  void printData();
+}
+
+class Document implements Printable {
+  @override
+  void printData() {
+    print("Printing document...");
+  }
+}
+
+void main() {
+  Printable doc = Document();
+  doc.printData();
+}
+
+
+// Static Members.
+
+class MathUtils {
+  static const double pi = 3.1416;
+
+  static double square(double num) {
+    return num * num;
+  }
+}
+
+void main() {
+  print(MathUtils.pi);
+  print(MathUtils.square(5));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
